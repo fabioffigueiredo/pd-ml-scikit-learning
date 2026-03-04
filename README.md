@@ -1,4 +1,4 @@
-<div align="left">
+<div align="center">
   <h1>
     <img src="images/logo_infnet.png" alt="Instituto Infnet" width="80" title="Instituto Infnet" align="absmiddle"/> 
     Projeto de Disciplina: Avaliação de Risco de Crédito
@@ -10,7 +10,7 @@
   **Pós-Graduação em Machine Learning, Deep Learning e Inteligência Artificial**<br>
   **Disciplina:** Fundamentos de Machine Learning com Scikit-Learn<br>
   **Professor:** Icaro Augusto Maccari Zelioli<br>
-  **Aluno:** Fabio Ferreira Figueiredo ([@fabioffigueiredo](https://github.com/fabioffigueiredo))
+  **Aluno:** Fabio Ferreira Figueiredo <a href="https://github.com/fabioffigueiredo"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a> 
 
   <p>
     <img src="https://img.shields.io/badge/python-v._3.13-blue?style=flat-square&logo=python&logoColor=white" alt="Python">

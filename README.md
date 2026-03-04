@@ -1,8 +1,12 @@
+<div align="left">
+  <h1>
+    <img src="images/logo_infnet.png" alt="Instituto Infnet" width="80" title="Instituto Infnet" align="absmiddle"/> 
+    Projeto de Disciplina: Avaliação de Risco de Crédito
+  </h1>
+</div>
+
 <div align="center">
-  <img src="images/logo_infnet.png" alt="Instituto Infnet" width="300"/>
-  
-  # Projeto de Disciplina: Avaliação de Risco de Crédito
-  
+
   **Pós-Graduação em Machine Learning, Deep Learning e Inteligência Artificial**<br>
   **Disciplina:** Fundamentos de Machine Learning com Scikit-Learn<br>
   **Professor:** Icaro Augusto Maccari Zelioli<br>

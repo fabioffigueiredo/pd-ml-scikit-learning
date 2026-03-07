@@ -11,6 +11,8 @@
   **Disciplina:** Fundamentos de Machine Learning com Scikit-Learn<br>
   **Professor:** Icaro Augusto Maccari Zelioli<br>
   **Aluno:** Fabio Ferreira Figueiredo <a href="https://github.com/fabioffigueiredo"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a> 
+  Felipe Moreira Szczpanski <a href="https://github.com/szczpanski"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a>
+  Lauro Camilo Barbosa Marques da Rocha <a href="https://github.com/LMRocha"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a>
 
   <p>
     <img src="https://img.shields.io/badge/python-v._3.13-blue?style=flat-square&logo=python&logoColor=white" alt="Python">
@@ -21,29 +23,31 @@
 
 ---
 
-## 📖 Visão Geral do Projeto
+## Visão Geral do Projeto
 
 Este projeto avalia o risco de inadimplência de tomadores de crédito utilizando o dataset **Give Me Some Credit (Kaggle)**. A modelagem preditiva foi desenvolvida do zero empregando algoritmos como *Perceptron*, *Árvores de Decisão* e *Random Forest* da biblioteca `scikit-learn`.
 
-O objetivo principal é prever se um cliente incorrerá em uma inadimplência grave (atraso nas obrigações financeiras por 90 dias ou mais) nos próximos dois anos, utilizando variáveis demográficas, financeiras e comportamentais.
+O projeto aplica aprendizado de máquina para capturar correlações não lineares. A abordagem segue uma progressão lógica de complexidade: desde um baseline linear interpretável até ensembles de alta performance, sempre priorizando a explicabilidade exigida pelo contexto regulatório financeiro (LGPD e BACEN).
+
+O objetivo principal é prever se um cliente incorrerá em uma inadimplência grave (atraso nas obrigações financeiras por 90 dias ou mais) nos próximos dois anos, utilizando variáveis demográficas, financeiras e comportamentais. 
 
 ---
 
-## 📊 O Dataset: Give Me Some Credit
+## O Dataset: Give Me Some Credit
 
-A base de dados utilizada provém de uma [competição do Kaggle (brycecf/give-me-some-credit-dataset)](https://www.kaggle.com/datasets/brycecf/give-me-some-credit-dataset) elaborada para construir algoritmos que definem quem pode ou não sofrer dificuldades financeiras no curto/médio prazo.
+A base de dados utilizada provém de uma [competição do Kaggle (brycecf/give-me-some-credit-dataset)](https://www.kaggle.com/datasets/brycecf/give-me-some-credit-dataset) elaborada para construir algoritmos que definem quem pode ou não sofrer dificuldades financeiras no curto/médio prazo. O problema é formulado como uma classificação binária sobre o dataset de aproximadamente 150.000 registros.
 
 ### Desafios Técnicos do Dataset
 Os dados financeiros reais trazem características que tornam a modelagem mais complexa:
-- **Desbalanceamento Extremo**: Apenas cerca de 6,7% dos registros representam clientes inadimplentes (classe positiva).
+- **Desbalanceamento Extremo**: Apenas cerca de 6,7% dos registros representam clientes inadimplentes (classe positiva), foi utilizado F1-Score e class_weight="balanced" para mitigar o viés da maioria.
 - **Valores Ausentes**: Volumes de dados faltantes acentuados, especialmente nas features `MonthlyIncome` (~20%) e `NumberOfDependents` (~2,5%).
-- **Outliers**: Presença de exceções em dados financeiros (ex: utilização de cartão acima de 100%, ou taxas de endividamento fora do comum).
+- **Outliers**: Presença de exceções em dados financeiros (ex: utilização de cartão acima de 100%, ou taxas de endividamento fora do comum, tratados via pipelines de pré-processamento estatístico.
 
 O projeto aplica técnicas robustas de engenharia de features, preenchimento estatístico via Pipeline (`SimpleImputer` com medianas), e hiperparametrização via `GridSearchCV` focada na métrica estrutural de **F1-Score**, balanceando *Recall* e *Precision* frente à minoria de casos positivos.
 
 ---
 
-## ⚙️ O que o Notebook Faz
+## O que o Notebook Faz
 
 O arquivo [`projeto_credito_supervisionado.ipynb`](projeto_credito_supervisionado.ipynb) cobre todo o ciclo de vida do pipeline de Machine Learning:
 
@@ -63,12 +67,18 @@ O arquivo [`projeto_credito_supervisionado.ipynb`](projeto_credito_supervisionad
    - Produção de um framework comparador interativo (Precision-Recall / AUC-ROC).
    - Levantamento de um racional conclusivo: os impactos de aprovar maus pagadores (Falso Negativo) vs negar bons tomadores (Falso Positivo).
 
-### 🏆 Resultados Esperados
+### Resultados Esperados
 Ao final do processo de triagem e *cross validation*, o **Random Forest** figura como o melhor detentor da métrica F1, estabilizando e diminuindo as altas variações intrínsecas ao modelo unitário (Árvore Convencional), destacando featuers financeiras chave no balanço final antes das recomendações aos gestores de carteira.
+
+### Conclusões e Viabilidade Real
+Para o cenário de BB Asset / Contexto BACEN:
+- O Random Forest é recomendado para o motor de scoring de alta precisão.
+
+- A Árvore Otimizada serve como ferramenta de auditoria para o Art. 20 da LGPD, permitindo explicar negativas de crédito de forma clara.
 
 ---
 
-## 🚀 Como Executar o Projeto Localmente
+## Como Executar o Projeto Localmente
 
 Siga o passo a passo rigoroso abaixo para replicar o ambiente perfeitamente compatível a esta versão avaliativa do modelo (utilizando **Python 3.13** e o provedor nativo **pip**):
 

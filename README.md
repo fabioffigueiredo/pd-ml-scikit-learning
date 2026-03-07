@@ -10,7 +10,7 @@
   **Pós-Graduação em Machine Learning, Deep Learning e Inteligência Artificial**<br>
   **Disciplina:** Fundamentos de Machine Learning com Scikit-Learn<br>
   **Professor:** Icaro Augusto Maccari Zelioli<br>
-  **Aluno:** Fabio Ferreira Figueiredo <a href="https://github.com/fabioffigueiredo"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a> 
+  **Alunos:** Fabio Ferreira Figueiredo <a href="https://github.com/fabioffigueiredo"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a> 
   Felipe Moreira Szczpanski <a href="https://github.com/szczpanski"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a>
   Lauro Camilo Barbosa Marques da Rocha <a href="https://github.com/LMRocha"><img src="https://img.shields.io/badge/GitHub-repo-black?logo=github" alt="GitHub"></a>
 
